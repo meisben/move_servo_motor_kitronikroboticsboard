@@ -1,11 +1,15 @@
-input.onButtonPressed(Button.A, function () {
-    basic.showIcon(IconNames.No)
+//  Define a function to move the servo to zero degrees when button A is pressed
+input.onButtonPressed(Button.A, function on_button_pressed_a() {
+    basic.showArrow(ArrowNames.East)
     Kitronik_Robotics_Board.servoWrite(Kitronik_Robotics_Board.Servos.Servo2, 0)
-    basic.showIcon(IconNames.Heart)
+    basic.showIcon(IconNames.Asleep)
 })
-input.onButtonPressed(Button.B, function () {
-    basic.showIcon(IconNames.Yes)
+//  Define a function to move the servo to 180 degrees when button A is pressed
+input.onButtonPressed(Button.B, function on_button_pressed_b() {
+    basic.showArrow(ArrowNames.West)
     Kitronik_Robotics_Board.servoWrite(Kitronik_Robotics_Board.Servos.Servo2, 180)
-    basic.showIcon(IconNames.Heart)
+    basic.showIcon(IconNames.Asleep)
 })
-basic.showIcon(IconNames.Heart)
+//  Start our program and move the motor to its starting position (0 degrees)
+Kitronik_Robotics_Board.servoWrite(Kitronik_Robotics_Board.Servos.Servo2, 0)
+basic.showIcon(IconNames.Asleep)
